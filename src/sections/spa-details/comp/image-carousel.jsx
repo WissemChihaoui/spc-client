@@ -47,7 +47,7 @@ export default function ImageCarousel() {
   };
 
   return (
-    <div className="relative w-full max-w-xl h-96 mx-auto overflow-hidden rounded-xl shadow-lg">
+    <div className="relative w-full h-96 mx-auto overflow-hidden rounded-xl shadow-lg">
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={index}
