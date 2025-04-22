@@ -1,17 +1,22 @@
 import { lazy, Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import LayoutTheme from "../layouts/layout";
+import LoadingScreen from "../components/loading-screen/loading-screen";
 
 const Index = lazy(() => import("../pages/home/index"));
 
+const layoutContent = (
+    <LayoutTheme>
+    <Suspense fallback={<LoadingScreen />}>
+      <Outlet />
+    </Suspense>
+    </LayoutTheme>
+
+);
 export const routes = [
   {
     path: "/",
-    element: (
-      <LayoutTheme>
-        <Outlet />
-      </LayoutTheme>
-    ),
+    element: layoutContent,
     children: [{ element: <Index />, index: true }],
   },
 ];
