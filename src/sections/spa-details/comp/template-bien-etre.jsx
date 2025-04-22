@@ -9,6 +9,7 @@ const cards = [
       "Massage evasion sensorielle : Le massage Évasion Sensorielle est une expérience holistique unique qui combine des techniques de massage traditionnelles avec des éléments d",
     spaNote: "Accès Spa (valeur 40 €) offert avec cette offre.",
     price: "99,00 €",
+    exclusiveExist: true
   },
   {
     image: "https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPA-visage-1975x1318-04.jpg",
@@ -17,6 +18,7 @@ const cards = [
       "Accès à l’espace Réveil des Sens et au Concept du Bonheur ET « Un masseur bien-être écoute avec ses mains, et son cœur » Le massage Indien du visage est originaire d",
     spaNote: "Accès Spa (valeur 40 €) offert avec cette offre.",
     price: "69,00 €",
+    exclusiveExist: false
   },
 ];
 

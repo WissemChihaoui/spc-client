@@ -15,7 +15,7 @@ export default function Tabs() {
   const [active, setActive] = useState(tabs[0]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto mt-10">
+    <div className="w-full max-w-6xl mx-auto mt-10">
       {/* Tab Buttons */}
       <div className="relative flex justify-between border-b border-gray-300">
         {tabs.map((tab) => (
