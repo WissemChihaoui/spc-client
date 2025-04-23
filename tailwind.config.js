@@ -9,7 +9,7 @@ export default {
       colors: {
         background : "#F7F6F4",
         primary: "#F9E6D0",
-        secondary: "#00373E"
+        secondary: "#373737"
       },
       fontFamily: {
         'bricolage': ['Bricolage Grotesque', 'sans-serif'],

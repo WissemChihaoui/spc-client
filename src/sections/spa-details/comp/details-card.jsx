@@ -7,7 +7,7 @@ export default function DetailsCard({details}) {
             <img src={details?.logo} alt="" className='max-w-20'/>
             <h4 className="font-semibold text-4xl">{details?.name}</h4>
         </div>
-        <p className='leading-base text-base max-h-48 overflow-y-scroll'>{details?.description}</p>
+        <p className='leading-base text-lg font-semibold max-h-48 overflow-y-scroll'>{details?.description}</p>
     </div>
   )
 }

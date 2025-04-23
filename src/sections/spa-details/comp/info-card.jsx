@@ -5,10 +5,10 @@ export default function InfoCard() {
     <div className='grid grid-cols-1 lg:grid-cols-3 mt-8 lg:mt-16 gap-6 lg:gap-2'>
         <div className="bg-primary text-secondary relative rounded-xl">
             <span className='absolute bg-secondary px-3 rounded text-primary left-2 -top-3'>Inf. Générale</span>
-            <ul className='p-8 font-bold'> 
-                <li className='mb-2'><span className='text-sm font-light'>Adresse :</span>100 chemin de la chapelle – 42300 Villerest</li>
-                <li className='mb-2'><span className='text-sm font-light'>Email :</span>contact@davidgrandspa.fr</li>
-                <li className=''><span className='text-sm font-light'>Tél. :</span>+33 (0)4 77 23 01 98</li>
+            <ul className='p-8 text-lg font-bold'> 
+                <li className='mb-2'><span className='text-base'>Adresse :</span>100 chemin de la chapelle – 42300 Villerest</li>
+                <li className='mb-2'><span className='text-base'>Email :</span>contact@davidgrandspa.fr</li>
+                <li className=''><span className='text-base'>Tél. :</span>+33 (0)4 77 23 01 98</li>
             </ul>
         </div>
         <div className="bg-secondary text-primary relative rounded-xl">

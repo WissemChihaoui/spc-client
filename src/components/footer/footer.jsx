@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <div className="lg:p-16 p-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="bg-secondary rounded-lg px-8 py-12 text-white text-center">
-            <img src={logo} alt="" className='w-48 mb-4 mx-auto'/>
+            <img src={logo} alt="" className='w-48 mb-4 mx-auto text-lg'/>
             <p className='mb-4'>Spa & Prestige Collection vous invite à vivre des expériences uniques, avec des soins personnalisés, des offres spa exclusives, des séjours d’exception et des options de restauration raffinées. Découvrez également nos cartes cadeaux pour offrir ces moments d’exception.</p>
 
             <div className='flex flex-col items-center'>

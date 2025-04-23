@@ -59,7 +59,7 @@ export default function CardItem({
         <div className="flex flex-col justify-between flex-1">
           <div>
             <h3 className="text-3xl font-bold text-gray-900">{title}</h3>
-            <p className="text-base text-gray-800 mt-1">
+            <p className="text-lg font-semibold text-gray-800 mt-1">
               {description}
               <span className="font-bold text-black cursor-pointer">
                 {" "}
@@ -67,15 +67,15 @@ export default function CardItem({
               </span>
             </p>
           </div>
-          <div className="flex text-base items-center mt-4 text-gray-600 gap-2">
-            <span className="text-xl">
+          <div className="flex text-lg font-semibold items-center mt-4 text-gray-600 gap-2">
+            <span className="text-3xl">
               <IoAlertCircle />
             </span>
             <p>{spaNote}</p>
           </div>
         </div>
 
-        <span className="text-xl flex items-center text-gray-900 font-semibold">
+        <span className="text-3xl flex items-center text-gray-900 font-bold">
           {price}
         </span>
 
@@ -88,7 +88,7 @@ export default function CardItem({
                   Offre flash
                 </span>
 
-                <div className="text-base font-bold text-gray-800 mt-1">
+                <div className="text-lg font-semibold font-bold text-gray-800 mt-1">
                   {remaining}
                 </div>
               </div>
