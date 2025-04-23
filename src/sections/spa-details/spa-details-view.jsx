@@ -8,9 +8,20 @@ import CarteCadeau from "./comp/carte-cadeau";
 import logoSpc from "../../assets/logo-small.png"
 import LocationSection from "./comp/location-section";
 import TestimonialsSection from "./comp/others-section";
+import { CATEGORIES } from "../../_mock/categories";
+import CategoryPuce from "../../components/category-puce/categoryPuce";
 export default function SpaDetailsView() {
   return (
     <div className="container">
+       <div className="flex flex-wrap gap-4 mx-auto items-center justify-center mb-4">
+            {CATEGORIES.map((category) => (
+              <CategoryPuce
+                title={category.title}
+                icon={category.icon}
+                link={category.link}
+              />
+            ))}
+          </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="">
           <ImageCarousel />

@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from "../../assets/SPC-logo-cercle-blanc.png"
 import { FaLongArrowAltRight } from 'react-icons/fa'
+import { paths } from '../../router/paths'
+import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <div className="lg:p-16 p-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -16,7 +18,7 @@ export default function Footer() {
         <div className="bg-white rounded-lg px-8 py-12 text-secondary flex flex-col lg:flex-row gap-3 justify-between">
             <ul className='text-lg space-y-2'>
                 <span className='text-2xl font-bold'>A PROPOS</span>
-                <li><a href="#">Qui sommes nous</a></li>
+                <li><Link to={paths.spa.root}>Qui sommes nous</Link></li>
                 <li><a href="#">Book Collection & Prestige</a></li>
                 <li><a href="#">Carte Cadeau</a></li>
                 <li><a href="#">Glossaire des termes utilisés</a></li>

@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-16 px-6 max-w-7xl mx-auto">
+    <section className="py-4 lg:py-16 px-2 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold mb-6">– Autres établissements –</h2>
           <div className="flex items-center space-x-4 mb-6">
         <button onClick={handlePrev} className="p-2 bg-white border rounded-full hover:bg-gray-100 transition">
