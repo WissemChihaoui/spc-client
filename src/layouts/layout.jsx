@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/navbar/navbar";
 import { CATEGORIES } from "../_mock/categories";
 import CategoryPuce from "../components/category-puce/categoryPuce";
+import Footer from "../components/footer/footer";
 
 export default function LayoutTheme({ children }) {
   return (
@@ -20,6 +21,7 @@ export default function LayoutTheme({ children }) {
           </div>
         </div>
         <div className="py-12">{children}</div>
+        <Footer />
       </div>
     </div>
   );

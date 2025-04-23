@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function InfoCard() {
   return (
-    <div className='grid grid-cols-3 mt-16 gap-2'>
+    <div className='grid grid-cols-1 lg:grid-cols-3 mt-8 lg:mt-16 gap-6 lg:gap-2'>
         <div className="bg-primary text-secondary relative rounded-xl">
             <span className='absolute bg-secondary px-3 rounded text-primary left-2 -top-3'>Inf. Générale</span>
             <ul className='p-8 font-bold'> 
