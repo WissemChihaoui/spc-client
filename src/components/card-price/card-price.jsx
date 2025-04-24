@@ -35,7 +35,7 @@ export default function CardPrice() {
             Le Spa by Sothys Paris République 5*
           </h5>
           <span className="text-lg md:text-lg font-bold">MASSAGE BALINAIS (85 min)</span>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+          <p className="text-gray-600 text-sm leading-relaxed font-tahoma">
             Le Spa Sothys, niché au sein du Renaissance Paris République Hotel,
             incarne l’exclusivité et le raffinement des rituels de bien-être.
           </p>

@@ -17,10 +17,10 @@ export default function Header() {
         className="absolute left-0 h-full hidden lg:block"
       />
       <div className="text-center w-full flex flex-col z-10 relative items-center p-4 lg:p-16">
-        <p className="text-secondary text-2xl font-bold lg:w-1/2 uppercase mb-4">
+        <p className="text-secondary text-4xl font-bold lg:w-3/4 mb-4">
           Rejoignez la Communauté Privée Spa & Prestige Collection ! Plongez
           dans un univers d’exception et laissez-vous séduire par des
-          privilèges rares et uni ues…
+          privilèges rares et uniques…
         </p>
         <ButtonIcon title="NOS AVANTAGES" icon={<FaStar />} />
       </div>

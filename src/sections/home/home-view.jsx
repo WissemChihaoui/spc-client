@@ -12,6 +12,7 @@ import CardPrice from "../../components/card-price/card-price";
 import { Link } from "react-router-dom";
 import { paths } from "../../router/paths";
 import CardNews from "../../components/card-news/card-news";
+import Card from "../../components/card/card";
 
 export default function HomeView() {
   const prevRef = useRef(null);
@@ -40,10 +41,38 @@ export default function HomeView() {
           </div>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-16">
-          <CardLarge />
-          <CardLarge />
-          <CardLarge />
-          <CardLarge />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
         </div>
         <div className="text-center">
           <ButtonIcon icon={<FaRegArrowAltCircleRight />} title="Découvrir" />
@@ -58,9 +87,30 @@ export default function HomeView() {
           </div>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
-          <CardLarge />
-          <CardLarge />
-          <CardLarge />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
         </div>
         <div className="text-center">
           <ButtonIcon
@@ -129,9 +179,30 @@ export default function HomeView() {
           </div>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
-          <CardLarge />
-          <CardLarge />
-          <CardLarge />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
+          <Card
+            type="large"
+            to="/spa/paris"
+            title="Le Spa by Sothys Paris République 5*"
+            description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+          />
         </div>
         <div className="text-center">
           <ButtonIcon
@@ -149,16 +220,55 @@ export default function HomeView() {
             </div>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
-            <CardPrice />
-            <CardPrice />
-            <CardPrice />
+            <Card
+              type="price"
+              to="/spa/paris"
+              title="Le Spa by Sothys Paris République 5*"
+              prestation="MASSAGE BALINAIS (85 min)"
+              description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+              image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+              location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+              price={120}
+            />
+            <Card
+              type="price"
+              to="/spa/paris"
+              title="Le Spa by Sothys Paris République 5*"
+              prestation="MASSAGE BALINAIS (85 min)"
+              description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+              image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+              location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+              price={120}
+            />
+            <Card
+              type="price"
+              to="/spa/paris"
+              title="Le Spa by Sothys Paris République 5*"
+              prestation="MASSAGE BALINAIS (85 min)"
+              description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+              image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+              location="75011 PARIS - ÎLE-DE-FRANCE - FRANCE"
+              price={120}
+            />
           </div>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-3 gap-2">
-          <Link to={paths.main} className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300">
+          <Card
+            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              nam nisi iste consequuntur neque asperiores non, incidunt
+              blanditiis omnis cumque.`}
+            type=""
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+            to={paths.main}
+            title=" Nos valeurs"
+          />
+          <Link
+            to={paths.main}
+            className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300"
+          >
             <img
               className="mb-2 "
               src="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
@@ -173,7 +283,10 @@ export default function HomeView() {
               blanditiis omnis cumque.
             </p>
           </Link>
-          <Link to={paths.main} className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300">
+          <Link
+            to={paths.main}
+            className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300"
+          >
             <img
               className="mb-2 "
               src="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
@@ -188,7 +301,10 @@ export default function HomeView() {
               blanditiis omnis cumque.
             </p>
           </Link>
-          <Link to={paths.main} className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300">
+          <Link
+            to={paths.main}
+            className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300"
+          >
             <img
               className="mb-2 "
               src="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
@@ -208,39 +324,80 @@ export default function HomeView() {
 
       <div className="bg-primary rounded-lg my-12">
         <div className="max-w-6xl mx-auto py-4">
-          <h2 className="text-4xl font-bold text-center">
-          Actualités{" "}
-          </h2>
+          <h2 className="text-4xl font-bold text-center">Actualités </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <CardNews />
-            <CardNews />
-            <CardNews />
+            <Card
+              type="news"
+              to="/spa/paris"
+              title="Le Spa by Sothys Paris République 5*"
+              description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+              image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+              date="20 avril 2025"
+            />
+            <Card
+              type="news"
+              to="/spa/paris"
+              title="Le Spa by Sothys Paris République 5*"
+              description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+              image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+              date="20 avril 2025"
+            />
+            <Card
+              type="news"
+              to="/spa/paris"
+              title="Le Spa by Sothys Paris République 5*"
+              description="Le Spa Sothys, niché au sein du Renaissance Paris République Hotel, incarne l’exclusivité et le raffinement des rituels de bien-être."
+              image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
+              date="20 avril 2025"
+            />
           </div>
         </div>
       </div>
 
       <div className="bg-white my-12 rounded-lg">
         <div className="max-w-6xl m-auto py-12 flex justify-between">
-          <Swiper breakpoints={{
+          <Swiper
+            breakpoints={{
               320: { slidesPerView: 1 },
               640: { slidesPerView: 2 },
               768: { slidesPerView: 3 },
               1024: { slidesPerView: 4 },
-            }}>
+            }}
+          >
             <SwiperSlide className="">
-              <img className="mx-auto" src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180" alt="" />
+              <img
+                className="mx-auto"
+                src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180"
+                alt=""
+              />
             </SwiperSlide>
             <SwiperSlide className="">
-              <img className="mx-auto" src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180" alt="" />
+              <img
+                className="mx-auto"
+                src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180"
+                alt=""
+              />
             </SwiperSlide>
             <SwiperSlide className="">
-              <img className="mx-auto" src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180" alt="" />
+              <img
+                className="mx-auto"
+                src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180"
+                alt=""
+              />
             </SwiperSlide>
             <SwiperSlide className="">
-              <img className="mx-auto" src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180" alt="" />
+              <img
+                className="mx-auto"
+                src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180"
+                alt=""
+              />
             </SwiperSlide>
             <SwiperSlide className="">
-              <img className="mx-auto" src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180" alt="" />
+              <img
+                className="mx-auto"
+                src="https://swissline-cosmetics.com/cdn/shop/files/swissline-logo.svg?v=1706103369&width=180"
+                alt=""
+              />
             </SwiperSlide>
           </Swiper>
         </div>
