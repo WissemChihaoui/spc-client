@@ -1,6 +1,8 @@
 import React from "react";
 // import { illustration1, illustration2 } from "../../../assets/illustration";
 import carteCadeau from "../../../assets/SPC-icone-carte-cadeau.png";
+import ButtonIcon from "../../../components/button-icon/button-icon";
+import { FaHandHoldingHeart } from "react-icons/fa";
 
 export default function CarteCadeau() {
   return (
@@ -17,7 +19,7 @@ export default function CarteCadeau() {
           JE COMMANDE une CARTE cadeau à utiliser dans un établissement SPA &
           PRESTIGE COLLECTION et je cumule des avantages
         </p>
-        <button className="bg-secondary rounded-full px-8 py-2 text-primary font-bold">OFFRIR</button>
+        <ButtonIcon title="OFFRIR" icon={<FaHandHoldingHeart />}/>
       </div>
     </div>
   );

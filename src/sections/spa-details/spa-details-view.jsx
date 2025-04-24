@@ -5,23 +5,13 @@ import logoD from "../../assets/logo-d.jpg";
 import InfoCard from "./comp/info-card";
 import Services from "./comp/services";
 import CarteCadeau from "./comp/carte-cadeau";
-import logoSpc from "../../assets/logo-small.png"
+import logoSpc from "../../assets/logo-small.png";
 import LocationSection from "./comp/location-section";
 import TestimonialsSection from "./comp/others-section";
-import { CATEGORIES } from "../../_mock/categories";
-import CategoryPuce from "../../components/category-puce/categoryPuce";
+
 export default function SpaDetailsView() {
   return (
     <div className="container">
-       <div className="flex flex-wrap gap-4 mx-auto items-center justify-center mb-4">
-            {CATEGORIES.map((category) => (
-              <CategoryPuce
-                title={category.title}
-                icon={category.icon}
-                link={category.link}
-              />
-            ))}
-          </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="">
           <ImageCarousel />
@@ -45,11 +35,17 @@ export default function SpaDetailsView() {
       <Services />
       <CarteCadeau />
       <div className="bg-white max-w-6xl w-full rounded-xl mx-auto">
-          <div className="flex flex-col items-center p-12 text-center">
-            <img src={logoSpc} alt="" className="w-36 mb-4"/>
-            <h3 className="text-4xl font-bold mb-4">– Le conseil Spa & Prestige Collection –</h3>
-            <p className="text-xl font-bold ">Au bord de la rivière du Dourdou, avec comme fond sonore, le bruit de l’eau, la terrasse extérieure est le point culminant pour apprécier la nature bucolique vous entoure.</p>
-          </div>
+        <div className="flex flex-col items-center p-12 text-center">
+          <img src={logoSpc} alt="" className="w-36 mb-4" />
+          <h3 className="text-4xl font-bold mb-4">
+            – Le conseil Spa & Prestige Collection –
+          </h3>
+          <p className="text-xl font-bold ">
+            Au bord de la rivière du Dourdou, avec comme fond sonore, le bruit
+            de l’eau, la terrasse extérieure est le point culminant pour
+            apprécier la nature bucolique vous entoure.
+          </p>
+        </div>
       </div>
 
       <LocationSection />
