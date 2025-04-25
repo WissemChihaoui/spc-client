@@ -22,11 +22,11 @@ export const routes = [
       { element: <Index />, index: true },
       {
         element: <Details />,
-        path: "/spa",
+        path: "spa",
       },
       {
         element: <ViewProduct />,
-        path: "/spa/:id",
+        path: "spa/:id",
       },
     ],
   },
