@@ -265,60 +265,24 @@ export default function HomeView() {
             to={paths.main}
             title=" Nos valeurs"
           />
-          <Link
-            to={paths.main}
-            className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300"
-          >
-            <img
-              className="mb-2 "
-              src="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
-              alt=""
-            />
-            <span className="text-2xl font-bold px-4 pb-2 text-secondary">
-              Nos valeurs{" "}
-            </span>
-            <p className="text-base font-bold px-4 pb-2 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          <Card
+            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
               nam nisi iste consequuntur neque asperiores non, incidunt
-              blanditiis omnis cumque.
-            </p>
-          </Link>
-          <Link
+              blanditiis omnis cumque.`}
+            type=""
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
             to={paths.main}
-            className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300"
-          >
-            <img
-              className="mb-2 "
-              src="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
-              alt=""
-            />
-            <span className="text-2xl font-bold px-4 pb-2 text-secondary">
-              Nos valeurs{" "}
-            </span>
-            <p className="text-base font-bold px-4 pb-2 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            title=" Nos valeurs"
+          />
+          <Card
+            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
               nam nisi iste consequuntur neque asperiores non, incidunt
-              blanditiis omnis cumque.
-            </p>
-          </Link>
-          <Link
+              blanditiis omnis cumque.`}
+            type=""
+            image="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
             to={paths.main}
-            className="bg-white flex flex-col  border rounded-md overflow-hidden hover:shadow-lg duration-300"
-          >
-            <img
-              className="mb-2 "
-              src="https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPC-Essence-1975x1318-02.jpg"
-              alt=""
-            />
-            <span className="text-2xl font-bold px-4 pb-2 text-secondary">
-              Nos valeurs{" "}
-            </span>
-            <p className="text-base font-bold px-4 pb-2 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              nam nisi iste consequuntur neque asperiores non, incidunt
-              blanditiis omnis cumque.
-            </p>
-          </Link>
+            title=" Nos valeurs"
+          />
         </div>
       </div>
 

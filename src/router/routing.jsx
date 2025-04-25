@@ -5,6 +5,7 @@ import LoadingScreen from "../components/loading-screen/loading-screen";
 
 const Index = lazy(() => import("../pages/home/index"));
 const Details = lazy(() => import("../pages/details/index"));
+const ViewProduct = lazy(() => import("../pages/product/index"));
 
 const layoutContent = (
   <LayoutTheme>
@@ -22,6 +23,10 @@ export const routes = [
       {
         element: <Details />,
         path: "/spa",
+      },
+      {
+        element: <ViewProduct />,
+        path: "/spa/:id",
       },
     ],
   },

@@ -3,6 +3,7 @@ import CardItem from "../../../components/card-item/card-item";
 // Example data (you can replace it with real data)
 const cards = [
   {
+    id: 1,
     image: "https://spa-prestige-collection.com/wp-content/uploads/2025/02/SPC-Massage-corps-1975x1318-02.jpg",
     title: "Massage evasion sensorielle – 1h – en Solo",
     description:
@@ -13,6 +14,7 @@ const cards = [
     flashDeadline:"2025-05-01T20:30:00"
   },
   {
+    id: 2,
     image: "https://spa-prestige-collection.com/wp-content/uploads/2025/03/SPA-visage-1975x1318-04.jpg",
     title: "Pass Paradis 1h + Traditionnel Indien du Visage 30 mn – Solo",
     description:

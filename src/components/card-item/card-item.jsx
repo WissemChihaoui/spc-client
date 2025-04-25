@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { FaShoppingBag } from "react-icons/fa";
 import { IoAlertCircle } from "react-icons/io5";
 import exclusive from "../../assets/exclusive.png";
+import ButtonIcon from "../button-icon/button-icon";
+import { paths } from "../../router/paths";
 
 export default function CardItem({
+  id,
   image,
   title,
   description,
@@ -42,7 +45,6 @@ export default function CardItem({
 
   return (
     <motion.div
-      
       className="flex flex-col md:flex-row gap-4 py-6 border-b border-gray-300"
     >
       {/* Image */}
@@ -88,7 +90,7 @@ export default function CardItem({
                   Offre flash
                 </span>
 
-                <div className="text-lg font-semibold font-bold text-gray-800 mt-1">
+                <div className="text-lg font-bold text-gray-800 mt-1">
                   {remaining}
                 </div>
               </div>
@@ -98,9 +100,8 @@ export default function CardItem({
           {exclusiveExist && (
             <img src={exclusive} alt="" className="w-16 h-auto" />
           )}
-          <button className="bg-secondary text-white font-bold px-4 py-2 text-sm mt-2 flex items-center gap-3 rounded-xl">
-            <FaShoppingBag /> OFFRIR
-          </button>
+          <ButtonIcon title="Offrir" icon={<FaShoppingBag />} link={paths.spa.details(id)}/>
+         
         </div>
       </div>
     </motion.div>
