@@ -18,7 +18,13 @@ const layoutContent = (
 export const routes = [
   {
     path: "/",
-    element: layoutContent,
+    element: (
+      <LayoutTheme>
+      <Suspense fallback={<LoadingScreen />}>
+        <Outlet />
+      </Suspense>
+      </LayoutTheme>
+    ),
     children: [
       { element: <Index />, index: true },
       {
