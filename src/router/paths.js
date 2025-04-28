@@ -3,5 +3,6 @@ export const paths = {
     spa:{
         root: '/spa',
         details: (id)=>`/spa/${id}`
-    }
+    },
+    checkout: '/checkout',
 }

@@ -2,14 +2,25 @@ import React, { useState } from "react";
 import ButtonIcon from "../../components/button-icon/button-icon";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaStar } from "react-icons/fa";
-// import ReactStars from "react-rating-stars-component";
-export default function ProductDetailsView() {
-    const [activeTab, setActiveTab] = useState("description");
-    const [selectedRating, setSelectedRating] = useState(0);
+import { useCheckoutContext } from "../checkout/context/use-checkout-context";
+import { useRouter } from "../../hooks";
+import { paths } from "../../router/paths";
 
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-      };
+export default function ProductDetailsView() {
+  const checkout = useCheckoutContext();
+  const router = useRouter()
+  const [activeTab, setActiveTab] = useState("description");
+
+  const addProductToCheckout = () => {
+    checkout.onAddToCart(
+      {
+        id: '1',
+        name: 'Pass Paradis 1h + Traditionnel Indien du Visage 30 mn – Solo',
+        price: 69,
+      }
+    )
+    router.push(paths.checkout)
+  }
 
   return (
     <div className="container max-w-6xl mx-auto px-4">
@@ -44,7 +55,15 @@ export default function ProductDetailsView() {
             69,00 €
           </div>
           <p className="leading-base text-base font-tahoma">
-          Accès à l’espace Réveil des Sens et au Concept du Bonheur ET « Un masseur bien-être écoute avec ses mains, et son cœur » Le massage Indien du visage est originaire du Kerala, berceau du massage Ayurveda en Inde. Pratiquée par les professionnels, cette méthode traditionnelle s’adresse à une clientèle à la recherche d’un soin de beauté et de relaxation. Le massage indien du visage s’inscrit dans une tradition ancestrale de bien-être, de relaxation. Concernant cette pratique la pression est moyenne et le rythme lent. Massage DaviD GranD Spa au Domaine de Champlong.
+            Accès à l’espace Réveil des Sens et au Concept du Bonheur ET « Un
+            masseur bien-être écoute avec ses mains, et son cœur » Le massage
+            Indien du visage est originaire du Kerala, berceau du massage
+            Ayurveda en Inde. Pratiquée par les professionnels, cette méthode
+            traditionnelle s’adresse à une clientèle à la recherche d’un soin de
+            beauté et de relaxation. Le massage indien du visage s’inscrit dans
+            une tradition ancestrale de bien-être, de relaxation. Concernant
+            cette pratique la pression est moyenne et le rythme lent. Massage
+            DaviD GranD Spa au Domaine de Champlong.
           </p>
         </div>
       </div>
@@ -64,6 +83,13 @@ export default function ProductDetailsView() {
               <input
                 type="text"
                 className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                value={checkout.billing.fullName}
+                onChange={(e) =>
+                  checkout.onCreateBilling({
+                    ...checkout.billing,
+                    fullName: e.target.value,
+                  })
+                }
               />
             </div>
             <div>
@@ -73,6 +99,13 @@ export default function ProductDetailsView() {
               <input
                 type="email"
                 className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                value={checkout.billing.email}
+                onChange={(e) =>
+                  checkout.onCreateBilling({
+                    ...checkout.billing,
+                    email: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
@@ -91,6 +124,13 @@ export default function ProductDetailsView() {
               <input
                 type="text"
                 className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                value={checkout.expediteur.fullName}
+                onChange={(e) =>
+                  checkout.onCreateExpediteur({
+                    ...checkout.expediteur,
+                    fullName: e.target.value,
+                  })
+                }
               />
             </div>
             <div>
@@ -100,106 +140,139 @@ export default function ProductDetailsView() {
               <textarea
                 rows="3"
                 className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
-              ></textarea>
+                value={checkout.billing.message}
+                onChange={(e) =>
+                  checkout.onCreateExpediteur({
+                    ...checkout.expediteur,
+                    message: e.target.value,
+                  })
+                }
+              >{checkout.billing.message}</textarea>
             </div>
           </div>
         </div>
 
         <div className="col-span-2">
-            <div className="flex justify-end">
-                <ButtonIcon title="Offrir" />
-            </div>
+          <div className="flex justify-end" onClick={()=>addProductToCheckout()}>
+            <ButtonIcon title="Offrir" />
+          </div>
         </div>
       </div>
       <div className="mt-10 bg-white p-3 font-tahoma rounded-xl shadow-sm">
-  <div className="flex gap-4 border-b border-gray-200">
-    <button
-      className={`px-4 py-2 font-semibold transition ${
-        activeTab === "description"
-          ? "border-b-2 border-secondary text-secondary"
-          : "text-gray-600"
-      }`}
-      onClick={() => setActiveTab("description")}
-    >
-      Description
-    </button>
-    <button
-      className={`px-4 py-2 font-semibold transition ${
-        activeTab === "reviews"
-          ? "border-b-2 border-secondary text-secondary"
-          : "text-gray-600"
-      }`}
-      onClick={() => setActiveTab("reviews")}
-    >
-      Avis
-    </button>
-  </div>
+        <div className="flex gap-4 border-b border-gray-200">
+          <button
+            className={`px-4 py-2 font-semibold transition ${
+              activeTab === "description"
+                ? "border-b-2 border-secondary text-secondary"
+                : "text-gray-600"
+            }`}
+            onClick={() => setActiveTab("description")}
+          >
+            Description
+          </button>
+          <button
+            className={`px-4 py-2 font-semibold transition ${
+              activeTab === "reviews"
+                ? "border-b-2 border-secondary text-secondary"
+                : "text-gray-600"
+            }`}
+            onClick={() => setActiveTab("reviews")}
+          >
+            Avis
+          </button>
+        </div>
 
-  <div className="mt-6 min-h-[150px]">
-    <AnimatePresence mode="wait">
-      {activeTab === "description" && (
-        <motion.div
-          key="description"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
-          className="text-base leading-relaxed text-gray-700"
-        >
-          Accès à l’espace Réveil des Sens et au Concept du Bonheur ET « Un masseur bien-être écoute avec ses mains, et son cœur » Le massage Indien du visage est originaire du Kerala, berceau du massage Ayurveda en Inde. Pratiquée par les professionnels, cette méthode traditionnelle s’adresse à une clientèle à la recherche d’un soin de beauté et de relaxation...
-        </motion.div>
-      )}
+        <div className="mt-6 min-h-[150px]">
+          <AnimatePresence mode="wait">
+            {activeTab === "description" && (
+              <motion.div
+                key="description"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="text-base leading-relaxed text-gray-700"
+              >
+                Accès à l’espace Réveil des Sens et au Concept du Bonheur ET «
+                Un masseur bien-être écoute avec ses mains, et son cœur » Le
+                massage Indien du visage est originaire du Kerala, berceau du
+                massage Ayurveda en Inde. Pratiquée par les professionnels,
+                cette méthode traditionnelle s’adresse à une clientèle à la
+                recherche d’un soin de beauté et de relaxation...
+              </motion.div>
+            )}
 
-{activeTab === "reviews" && (
-  <motion.div
-    key="reviews"
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -10 }}
-    transition={{ duration: 0.3 }}
-    className="space-y-6"
-  >
-    {/* Existing Reviews */}
-    <div className="space-y-4">
-      <div className="bg-gray-100 p-4 rounded-md">
-        <p className="font-semibold">Marie D.</p>
-        <div className="text-yellow-500 text-sm mb-1 flex gap-1"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-        <p className="text-sm text-gray-600">"Très belle expérience, je recommande !"</p>
+            {activeTab === "reviews" && (
+              <motion.div
+                key="reviews"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-6"
+              >
+                {/* Existing Reviews */}
+                <div className="space-y-4">
+                  <div className="bg-gray-100 p-4 rounded-md">
+                    <p className="font-semibold">Marie D.</p>
+                    <div className="text-yellow-500 text-sm mb-1 flex gap-1">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      "Très belle expérience, je recommande !"
+                    </p>
+                  </div>
+                  <div className="bg-gray-100 p-4 rounded-md">
+                    <p className="font-semibold">Jean M.</p>
+                    <div className="text-yellow-500 text-sm mb-1 flex gap-1">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      "Massage très relaxant et lieu magnifique."
+                    </p>
+                  </div>
+                </div>
+
+                {/* Add a Review Form */}
+                <div className="bg-white p-4 rounded-lg border">
+                  <h6 className="font-semibold text-lg mb-2">
+                    Laisser un avis
+                  </h6>
+
+                  <div className="mb-3">
+                    <label className="block text-sm font-medium mb-1">
+                      Votre commentaire
+                    </label>
+                    <textarea
+                      rows={4}
+                      className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Partagez votre expérience..."
+                    ></textarea>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium mb-1">
+                      Votre note
+                    </label>
+                  </div>
+
+                  <div className="flex justify-end">
+                    <ButtonIcon title="Envoyer l'avis" />
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
-      <div className="bg-gray-100 p-4 rounded-md">
-        <p className="font-semibold">Jean M.</p>
-        <div className="text-yellow-500 text-sm mb-1 flex gap-1"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-        <p className="text-sm text-gray-600">"Massage très relaxant et lieu magnifique."</p>
-      </div>
-    </div>
-
-    {/* Add a Review Form */}
-    <div className="bg-white p-4 rounded-lg border">
-      <h6 className="font-semibold text-lg mb-2">Laisser un avis</h6>
-
-      <div className="mb-3">
-        <label className="block text-sm font-medium mb-1">Votre commentaire</label>
-        <textarea
-          rows={4}
-          className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
-          placeholder="Partagez votre expérience..."
-        ></textarea>
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Votre note</label>
-       
-      </div>
-
-      <div className="flex justify-end">
-        <ButtonIcon title="Envoyer l'avis" />
-      </div>
-    </div>
-  </motion.div>
-)}
-    </AnimatePresence>
-  </div>
-</div>
     </div>
   );
 }
