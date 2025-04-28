@@ -185,7 +185,7 @@ export default function CheckoutView() {
             </div>
           )}
         </div>
-        <ButtonIcon title="Commander" size=""/>
+        <ButtonIcon title="Commander" size="" link={paths.payment}/>
       </div>
 
       

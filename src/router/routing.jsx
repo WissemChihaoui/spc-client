@@ -7,22 +7,17 @@ const Index = lazy(() => import("../pages/home/index"));
 const Details = lazy(() => import("../pages/details/index"));
 const ViewProduct = lazy(() => import("../pages/product/index"));
 const Chekckout = lazy(() => import("../pages/checkout/index"));
+const ChekckoutPayement = lazy(() => import("../pages/checkout/checkout"));
+const CheckoutDetails = lazy(() => import("../pages/checkout/details"));
 
-const layoutContent = (
-  <LayoutTheme>
-    <Suspense fallback={<LoadingScreen />}>
-      <Outlet />
-    </Suspense>
-  </LayoutTheme>
-);
 export const routes = [
   {
     path: "/",
     element: (
       <LayoutTheme>
-      <Suspense fallback={<LoadingScreen />}>
-        <Outlet />
-      </Suspense>
+        <Suspense fallback={<LoadingScreen />}>
+          <Outlet />
+        </Suspense>
       </LayoutTheme>
     ),
     children: [
@@ -38,6 +33,14 @@ export const routes = [
       {
         element: <Chekckout />,
         path: "checkout",
+      },
+      {
+        element: <ChekckoutPayement />,
+        path: "payment",
+      },
+      {
+        element: <CheckoutDetails />,
+        path: "checkout/details",
       },
     ],
   },

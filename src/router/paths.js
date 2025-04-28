@@ -5,4 +5,6 @@ export const paths = {
         details: (id)=>`/spa/${id}`
     },
     checkout: '/checkout',
+    payment: '/payment',
+    checkoutDetails: '/checkout/details'
 }
