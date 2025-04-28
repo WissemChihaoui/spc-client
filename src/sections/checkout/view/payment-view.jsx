@@ -227,7 +227,7 @@ export default function PaymentView() {
         {/* Buttons */}
         <div className="flex justify-between mt-6">
           <Link to={paths.checkout} className="flex items-center gap-2"><FaChevronLeft />Retour au panier</Link>
-          <ButtonIcon title="Commander"/>
+          <ButtonIcon title="Commander" link={paths.checkoutDetails}/>
         </div>
       </div>
 

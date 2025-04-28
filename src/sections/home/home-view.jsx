@@ -1,17 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import Header from "./comp/header";
 import CarteCadeau from "../spa-details/comp/carte-cadeau";
-import CardLarge from "../../components/card-large/card-large";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import ButtonIcon from "../../components/button-icon/button-icon";
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-import CardPrice from "../../components/card-price/card-price";
-import { Link } from "react-router-dom";
 import { paths } from "../../router/paths";
-import CardNews from "../../components/card-news/card-news";
 import Card from "../../components/card/card";
 
 export default function HomeView() {
