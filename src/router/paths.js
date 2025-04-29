@@ -6,5 +6,13 @@ export const paths = {
     },
     checkout: '/checkout',
     payment: '/payment',
-    checkoutDetails: '/checkout/details'
+    checkoutDetails: '/checkout/details',
+    dashboard: {
+        root: '/dashboard',
+        commandes: {
+            root: '/dashboard/commandes',
+            view: (id) => `/dashboard/commandes/${id}/view`
+        },
+        details: '/dashboard/details',
+    }
 }
