@@ -14,5 +14,8 @@ export const paths = {
             view: (id) => `/dashboard/commandes/${id}/view`
         },
         details: '/dashboard/details',
+    },
+    auth: {
+        root: '/auth'
     }
 }

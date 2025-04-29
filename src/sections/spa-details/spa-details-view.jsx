@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageCarousel from "./comp/image-carousel";
 import DetailsCard from "./comp/details-card";
 import logoD from "../../assets/logo-d.jpg";
@@ -8,8 +8,32 @@ import CarteCadeau from "./comp/carte-cadeau";
 import logoSpc from "../../assets/logo-small.png";
 import LocationSection from "./comp/location-section";
 import TestimonialsSection from "./comp/others-section";
+import StarRatingInput from "src/components/star-rating-input/star-rating-input";
+import ButtonIcon from "src/components/button-icon/button-icon";
+
+
+const criteria = [
+  "Practicien(ne)",
+  "Accueil",
+  "Vestiaires",
+  "Cabine",
+  "Soin",
+  "Détente",
+  "Équipements",
+  "Boutique",
+];
 
 export default function SpaDetailsView() {
+  const initialRatings = {};
+  criteria.forEach((key) => {
+    initialRatings[key] = 0;
+  });
+
+  const [ratings, setRatings] = useState(initialRatings);
+
+  const handleRatingChange = (category, value) => {
+    setRatings((prev) => ({ ...prev, [category]: value }));
+  };
   return (
     <div className="container">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -20,6 +44,7 @@ export default function SpaDetailsView() {
           details={{
             name: "David Grand Spa – Villerest",
             logo: logoD,
+            avgRating: 4,
             description: `DaviD GranD Spa est un lieu de bien-être unique situé à Villerest, à proximité de Roanne. Il vous invite à vivre une véritable expérience de détente et de ressourcement, dans une parfaite harmonie entre le corps et l’esprit.
                     Conçu pour ceux qui recherchent une pause régénérante, notre spa vous propose une large gamme de soins sur mesure, adaptés à vos besoins : massages relaxants, soins du visage, gommages, rituels personnalisés... le tout dans une atmosphère apaisante et chaleureuse.
         
@@ -33,6 +58,25 @@ export default function SpaDetailsView() {
       </div>
       <InfoCard />
       <Services />
+      <div className="bg-white p-4 rounded-lg border max-w-6xl m-auto mt-8">
+        <h6 className="font-semibold text-lg mb-4">Laisser un avis</h6>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+          {criteria.map((criterion) => (
+            <div key={criterion}>
+              <label className="block text-sm font-medium mb-1">{criterion}</label>
+              <StarRatingInput
+                value={ratings[criterion]}
+                onChange={(value) => handleRatingChange(criterion, value)}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-end">
+          <ButtonIcon title="Envoyer l'avis" />
+        </div>
+      </div>
       <CarteCadeau />
       <div className="bg-white max-w-6xl w-full rounded-xl mx-auto">
         <div className="flex flex-col items-center p-12 text-center">

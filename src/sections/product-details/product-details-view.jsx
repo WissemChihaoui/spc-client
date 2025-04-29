@@ -5,11 +5,16 @@ import { FaStar } from "react-icons/fa";
 import { useCheckoutContext } from "../checkout/context/use-checkout-context";
 import { useRouter } from "../../hooks";
 import { paths } from "../../router/paths";
+import { Star } from "lucide-react";
+import StarRatingInput from "src/components/star-rating-input/star-rating-input";
 
 export default function ProductDetailsView() {
   const checkout = useCheckoutContext();
   const router = useRouter()
+  const stars = 3;
   const [activeTab, setActiveTab] = useState("description");
+  const roundedRating = Math.round(stars * 2) / 2;
+  const [rating, setRating] = useState(0);
 
   const addProductToCheckout = () => {
     checkout.onAddToCart(
@@ -27,7 +32,7 @@ export default function ProductDetailsView() {
       <h4 className="font-semibold text-4xl mb-4">
         Pass Paradis 1h + Traditionnel Indien du Visage 30 mn – Solo
       </h4>
-
+     
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <img
           className="rounded-lg"
@@ -51,6 +56,17 @@ export default function ProductDetailsView() {
               </div>
             ))}
           </div>
+          <div className="flex items-center gap-1">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <Star
+              key={i}
+              size={18}
+              fill={i <= roundedRating ? "#facc15" : i - 0.5 === roundedRating ? "#facc15" : "none"}
+              stroke="#facc15"
+            />
+          ))}
+          <span className="text-sm text-gray-600 ml-2">({stars.toFixed(1)})</span>
+                </div>
           <div className="font-bold text-secondary text-3xl font-tahoma mb-2">
             69,00 €
           </div>
@@ -262,6 +278,7 @@ export default function ProductDetailsView() {
                     <label className="block text-sm font-medium mb-1">
                       Votre note
                     </label>
+                    <StarRatingInput value={rating} onChange={setRating} />
                   </div>
 
                   <div className="flex justify-end">

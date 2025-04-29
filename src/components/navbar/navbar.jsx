@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { IoMdCart, IoMdMenu } from 'react-icons/io';
+import { IoMdCart, IoMdLogIn, IoMdMenu } from 'react-icons/io';
 import Logo from '../logo/logo';
 import Menu from '../menu/menu';
 import { Link } from 'react-router-dom';
@@ -19,14 +19,19 @@ export default function Navbar() {
 
       <Logo className="max-w-60" />
 
-      <Link to={paths.checkout} className="relative">
-        <IoMdCart className="text-2xl" />
-        {items?.length > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-tahoma">
-            {items.length}
-          </span>
-        )}
-      </Link>
+      <div className="flex gap-3">
+        <Link to={paths.auth.root} className="relative">
+          <IoMdLogIn className="text-2xl" />
+        </Link>
+        <Link to={paths.checkout} className="relative">
+          <IoMdCart className="text-2xl" />
+          {items?.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-tahoma">
+              {items.length}
+            </span>
+          )}
+        </Link>
+      </div>
     </div>
   );
 }
